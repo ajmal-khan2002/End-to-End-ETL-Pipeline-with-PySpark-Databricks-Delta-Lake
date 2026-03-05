@@ -1,0 +1,24 @@
+2026-02-09 06:49:46 - root - INFO - ✓ Logging to file: /Workspace/Users/ajmalkhan88083@gmail.com/end_to_end_data_engineering/Logs/etl_pipeline_20260209_064946.log
+2026-02-09 06:49:46 - __main__ - INFO - Starting Problem 4: How many customers are repeat buyers vs one-time buyers?
+2026-02-09 06:49:46 - __main__ - INFO - Step 1: Extracting data...
+2026-02-09 06:49:46 - __main__ - INFO - Starting data extraction...
+2026-02-09 06:49:46 - __main__ - INFO -   Reading customer.csv...
+2026-02-09 06:49:48 - __main__ - INFO - Loaded 6000000 customer records
+2026-02-09 06:49:48 - __main__ - INFO -   Reading orders.csv...
+2026-02-09 06:49:50 - __main__ - INFO - Loaded 10000000 Order records
+2026-02-09 06:49:50 - __main__ - INFO -   Reading order_items.csv...
+2026-02-09 06:49:54 - __main__ - INFO - Loaded 30000000 order_items records
+2026-02-09 06:49:54 - __main__ - INFO -   Reading product.csv...
+2026-02-09 06:49:55 - __main__ - INFO - Loaded 150000 product records
+2026-02-09 06:50:23 - __main__ - INFO -  Extraction successful
+2026-02-09 06:50:23 - __main__ - INFO - Step 2: Transforming data...
+2026-02-09 06:50:23 - __main__ - ERROR -  Problem 4 FAILED
+2026-02-09 06:50:23 - __main__ - ERROR - Error: DataFrame.filter() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/home/spark-fd322e1c-16f0-466a-8635-7b/.ipykernel/2608/command-8264531454665573-288276240", line 23, in runner
+    repeatvsOneTimeCustomersDF = repeatvsOneTimeCustomers().transform(inputDFs)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spark-fd322e1c-16f0-466a-8635-7b/.ipykernel/2608/command-5195029872733773-2666038664", line 219, in transform
+    ).filter(
+      ^^^^^^^
+TypeError: DataFrame.filter() takes 2 positional arguments but 3 were given

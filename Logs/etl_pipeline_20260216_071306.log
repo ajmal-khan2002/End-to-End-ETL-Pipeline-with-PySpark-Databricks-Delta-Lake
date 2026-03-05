@@ -1,0 +1,175 @@
+2026-02-16 07:13:06 - root - INFO - ✓ Logging to file: /Workspace/Users/ajmalkhan88083@gmail.com/end_to_end_data_engineering/Logs/etl_pipeline_20260216_071306.log
+2026-02-16 07:13:06 - __main__ - INFO - Starting Problem 5: What percentage of orders are delivered vs cancelled?
+2026-02-16 07:13:06 - __main__ - INFO - Step 1: Extracting data...
+2026-02-16 07:13:06 - __main__ - INFO - Starting data extraction...
+2026-02-16 07:13:06 - __main__ - INFO -   Reading customer.csv...
+2026-02-16 07:13:08 - __main__ - INFO - Loaded 6000000 customer records
+2026-02-16 07:13:08 - __main__ - INFO -   Reading orders.csv...
+2026-02-16 07:13:11 - __main__ - INFO - Loaded 10000000 Order records
+2026-02-16 07:13:11 - __main__ - INFO -   Reading order_items.csv...
+2026-02-16 07:13:15 - __main__ - INFO - Loaded 30000000 order_items records
+2026-02-16 07:13:15 - __main__ - INFO -   Reading product.csv...
+2026-02-16 07:13:16 - __main__ - INFO - Loaded 150000 product records
+2026-02-16 07:13:49 - __main__ - INFO -  Extraction successful
+2026-02-16 07:13:49 - __main__ - INFO - Step 2: Transforming data...
+2026-02-16 07:13:50 - __main__ - INFO - Transformation successful. Rows: 10000000
+2026-02-16 07:13:52 - __main__ - ERROR -  Problem 5 FAILED
+2026-02-16 07:13:52 - __main__ - ERROR - Error: [CAST_INVALID_INPUT] The value 'Byk-1260585' of the type "STRING" cannot be cast to "DOUBLE" because it is malformed. Correct the value as per the syntax, or change its target type. Use `try_cast` to tolerate malformed input and return NULL instead. SQLSTATE: 22018
+== DataFrame ==
+"over" was called from
+<command-8820294981604533>, line 263 in cell [20]
+
+
+JVM stacktrace:
+org.apache.spark.SparkNumberFormatException
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.invalidInputInCastToNumberError(QueryExecutionErrors.scala:188)
+	at com.databricks.photon.PhotonException$.getSparkException(PhotonException.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$16(SQLExecution.scala:693)
+	at org.apache.spark.sql.execution.SQLExecution$.withSessionTagsApplied(SQLExecution.scala:1028)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$15(SQLExecution.scala:542)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:97)
+	at org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:124)
+	at org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:118)
+	at org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:123)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$14(SQLExecution.scala:542)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:1063)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$1(SQLExecution.scala:541)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:860)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId0(SQLExecution.scala:359)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:981)
+	at org.apache.spark.sql.classic.Dataset.withAction(Dataset.scala:2763)
+	at org.apache.spark.sql.classic.Dataset.head(Dataset.scala:1660)
+	at org.apache.spark.sql.Dataset.take(Dataset.scala:2822)
+	at org.apache.spark.sql.classic.Dataset.getRows(Dataset.scala:495)
+	at org.apache.spark.sql.classic.Dataset.showString(Dataset.scala:531)
+	at org.apache.spark.sql.connect.planner.SparkConnectPlanner.transformShowString(SparkConnectPlanner.scala:419)
+	at org.apache.spark.sql.connect.planner.SparkConnectPlanner.$anonfun$transformRelation$1(SparkConnectPlanner.scala:217)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$usePlanCache$10(SessionHolder.scala:861)
+	at org.apache.spark.sql.connect.service.SessionHolder.measureSubtreeRelationNodes(SessionHolder.scala:881)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$usePlanCache$9(SessionHolder.scala:860)
+	at org.apache.spark.sql.connect.utils.TimingUtils$.withTiming(TimingUtils.scala:35)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$usePlanCache$6(SessionHolder.scala:860)
+	at scala.Option.getOrElse(Option.scala:201)
+	at org.apache.spark.sql.connect.service.SessionHolder.usePlanCache(SessionHolder.scala:852)
+	at org.apache.spark.sql.connect.planner.SparkConnectPlanner.transformRelation(SparkConnectPlanner.scala:214)
+	at org.apache.spark.sql.connect.execution.SparkConnectPlanExecution.handlePlan(SparkConnectPlanExecution.scala:107)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.handlePlan(ExecuteThreadRunner.scala:378)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.$anonfun$executeInternal$1(ExecuteThreadRunner.scala:284)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.$anonfun$executeInternal$1$adapted(ExecuteThreadRunner.scala:240)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$withSession$2(SessionHolder.scala:633)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:860)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$withSession$1(SessionHolder.scala:633)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:97)
+	at org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:124)
+	at org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:118)
+	at org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:123)
+	at org.apache.spark.sql.connect.service.SessionHolder.withSession(SessionHolder.scala:632)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.executeInternal(ExecuteThreadRunner.scala:240)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.$anonfun$execute$1(ExecuteThreadRunner.scala:143)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at com.databricks.spark.connect.service.UtilizationMetrics.recordActiveQueries(UtilizationMetrics.scala:43)
+	at com.databricks.spark.connect.service.UtilizationMetrics.recordActiveQueries$(UtilizationMetrics.scala:40)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.recordActiveQueries(ExecuteThreadRunner.scala:55)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.org$apache$spark$sql$connect$execution$ExecuteThreadRunner$$execute(ExecuteThreadRunner.scala:141)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner$ExecutionThread.$anonfun$run$3(ExecuteThreadRunner.scala:602)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at com.databricks.spark.util.DBRTracing$.withSpanFromParent(DBRTracing.scala:70)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner$ExecutionThread.$anonfun$run$2(ExecuteThreadRunner.scala:602)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at com.databricks.unity.UCSEphemeralState$Handle.runWith(UCSEphemeralState.scala:51)
+	at com.databricks.unity.HandleImpl.runWith(UCSHandle.scala:104)
+	at com.databricks.unity.HandleImpl.$anonfun$runWithAndClose$1(UCSHandle.scala:109)
+	at scala.util.Using$.resource(Using.scala:296)
+	at com.databricks.unity.HandleImpl.runWithAndClose(UCSHandle.scala:108)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner$ExecutionThread.run(ExecuteThreadRunner.scala:601)
+Traceback (most recent call last):
+  File "/home/spark-b10f0522-e784-42c0-a252-0b/.ipykernel/2639/command-7428020290726352-2091916713", line 29, in runner
+    orderDeliveredVsCancelledDF.show()
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/dataframe.py", line 1156, in show
+    print(self._show_string(n, truncate, vertical))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/dataframe.py", line 909, in _show_string
+    )._to_table()
+      ^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/dataframe.py", line 1923, in _to_table
+    table, schema, self._execution_info = self._session.client.to_table(
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/client/core.py", line 1272, in to_table
+    table, schema, metrics, observed_metrics, _ = self._execute_and_fetch(req, observations)
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/client/core.py", line 2139, in _execute_and_fetch
+    for response in self._execute_and_fetch_as_iterator(
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/client/core.py", line 2115, in _execute_and_fetch_as_iterator
+    self._handle_error(error)
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/client/core.py", line 2433, in _handle_error
+    self._handle_rpc_error(error)
+  File "/databricks/python/lib/python3.12/site-packages/pyspark/sql/connect/client/core.py", line 2511, in _handle_rpc_error
+    raise convert_exception(
+pyspark.errors.exceptions.connect.NumberFormatException: [CAST_INVALID_INPUT] The value 'Byk-1260585' of the type "STRING" cannot be cast to "DOUBLE" because it is malformed. Correct the value as per the syntax, or change its target type. Use `try_cast` to tolerate malformed input and return NULL instead. SQLSTATE: 22018
+== DataFrame ==
+"over" was called from
+<command-8820294981604533>, line 263 in cell [20]
+
+
+JVM stacktrace:
+org.apache.spark.SparkNumberFormatException
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.invalidInputInCastToNumberError(QueryExecutionErrors.scala:188)
+	at com.databricks.photon.PhotonException$.getSparkException(PhotonException.scala:207)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$16(SQLExecution.scala:693)
+	at org.apache.spark.sql.execution.SQLExecution$.withSessionTagsApplied(SQLExecution.scala:1028)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$15(SQLExecution.scala:542)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:97)
+	at org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:124)
+	at org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:118)
+	at org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:123)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$14(SQLExecution.scala:542)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:1063)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId0$1(SQLExecution.scala:541)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:860)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId0(SQLExecution.scala:359)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:981)
+	at org.apache.spark.sql.classic.Dataset.withAction(Dataset.scala:2763)
+	at org.apache.spark.sql.classic.Dataset.head(Dataset.scala:1660)
+	at org.apache.spark.sql.Dataset.take(Dataset.scala:2822)
+	at org.apache.spark.sql.classic.Dataset.getRows(Dataset.scala:495)
+	at org.apache.spark.sql.classic.Dataset.showString(Dataset.scala:531)
+	at org.apache.spark.sql.connect.planner.SparkConnectPlanner.transformShowString(SparkConnectPlanner.scala:419)
+	at org.apache.spark.sql.connect.planner.SparkConnectPlanner.$anonfun$transformRelation$1(SparkConnectPlanner.scala:217)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$usePlanCache$10(SessionHolder.scala:861)
+	at org.apache.spark.sql.connect.service.SessionHolder.measureSubtreeRelationNodes(SessionHolder.scala:881)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$usePlanCache$9(SessionHolder.scala:860)
+	at org.apache.spark.sql.connect.utils.TimingUtils$.withTiming(TimingUtils.scala:35)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$usePlanCache$6(SessionHolder.scala:860)
+	at scala.Option.getOrElse(Option.scala:201)
+	at org.apache.spark.sql.connect.service.SessionHolder.usePlanCache(SessionHolder.scala:852)
+	at org.apache.spark.sql.connect.planner.SparkConnectPlanner.transformRelation(SparkConnectPlanner.scala:214)
+	at org.apache.spark.sql.connect.execution.SparkConnectPlanExecution.handlePlan(SparkConnectPlanExecution.scala:107)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.handlePlan(ExecuteThreadRunner.scala:378)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.$anonfun$executeInternal$1(ExecuteThreadRunner.scala:284)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.$anonfun$executeInternal$1$adapted(ExecuteThreadRunner.scala:240)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$withSession$2(SessionHolder.scala:633)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:860)
+	at org.apache.spark.sql.connect.service.SessionHolder.$anonfun$withSession$1(SessionHolder.scala:633)
+	at org.apache.spark.JobArtifactSet$.withActiveJobArtifactState(JobArtifactSet.scala:97)
+	at org.apache.spark.sql.artifact.ArtifactManager.$anonfun$withResources$1(ArtifactManager.scala:124)
+	at org.apache.spark.sql.artifact.ArtifactManager.withClassLoaderIfNeeded(ArtifactManager.scala:118)
+	at org.apache.spark.sql.artifact.ArtifactManager.withResources(ArtifactManager.scala:123)
+	at org.apache.spark.sql.connect.service.SessionHolder.withSession(SessionHolder.scala:632)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.executeInternal(ExecuteThreadRunner.scala:240)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.$anonfun$execute$1(ExecuteThreadRunner.scala:143)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at com.databricks.spark.connect.service.UtilizationMetrics.recordActiveQueries(UtilizationMetrics.scala:43)
+	at com.databricks.spark.connect.service.UtilizationMetrics.recordActiveQueries$(UtilizationMetrics.scala:40)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.recordActiveQueries(ExecuteThreadRunner.scala:55)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner.org$apache$spark$sql$connect$execution$ExecuteThreadRunner$$execute(ExecuteThreadRunner.scala:141)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner$ExecutionThread.$anonfun$run$3(ExecuteThreadRunner.scala:602)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at com.databricks.spark.util.DBRTracing$.withSpanFromParent(DBRTracing.scala:70)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner$ExecutionThread.$anonfun$run$2(ExecuteThreadRunner.scala:602)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at com.databricks.unity.UCSEphemeralState$Handle.runWith(UCSEphemeralState.scala:51)
+	at com.databricks.unity.HandleImpl.runWith(UCSHandle.scala:104)
+	at com.databricks.unity.HandleImpl.$anonfun$runWithAndClose$1(UCSHandle.scala:109)
+	at scala.util.Using$.resource(Using.scala:296)
+	at com.databricks.unity.HandleImpl.runWithAndClose(UCSHandle.scala:108)
+	at org.apache.spark.sql.connect.execution.ExecuteThreadRunner$ExecutionThread.run(ExecuteThreadRunner.scala:601)

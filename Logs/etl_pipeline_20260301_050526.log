@@ -1,0 +1,20 @@
+2026-03-01 05:05:26 - root - INFO - ✓ Logging to file: /Workspace/Users/ajmalkhan88083@gmail.com/end_to_end_data_engineering/Logs/etl_pipeline_20260301_050526.log
+2026-03-01 05:05:26 - __main__ - INFO - Starting Problem 7: Which payment methods drive the most revenue?
+2026-03-01 05:05:26 - __main__ - INFO - Step 1: Extracting data...
+2026-03-01 05:05:26 - __main__ - INFO - Starting data extraction...
+2026-03-01 05:05:26 - __main__ - INFO -   Reading customer.csv...
+2026-03-01 05:05:28 - __main__ - INFO - Loaded 6000000 customer records
+2026-03-01 05:05:28 - __main__ - INFO -   Reading orders.csv...
+2026-03-01 05:05:30 - __main__ - INFO - Loaded 10000000 Order records
+2026-03-01 05:05:30 - __main__ - INFO -   Reading order_items.csv...
+2026-03-01 05:05:34 - __main__ - INFO - Loaded 30000000 order_items records
+2026-03-01 05:05:34 - __main__ - INFO -   Reading product.csv...
+2026-03-01 05:05:34 - __main__ - INFO - Loaded 150000 product records
+2026-03-01 05:06:03 - __main__ - INFO - Extraction successful
+2026-03-01 05:06:03 - __main__ - ERROR - Problem 7 FAILED
+2026-03-01 05:06:03 - __main__ - ERROR - Error: cannot unpack non-iterable NoneType object
+Traceback (most recent call last):
+  File "/home/spark-3fa5edd1-09c2-4ea4-9220-74/.ipykernel/2727/command-7741236471166683-3269873041", line 24, in runner
+    revenue_summaryDF, top_5_productDF = productCategoriesRevenue().transform(inputDFs)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object

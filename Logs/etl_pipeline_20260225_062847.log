@@ -1,0 +1,2 @@
+2026-02-25 06:28:47 - root - INFO - ✓ Logging to file: /Workspace/Users/ajmalkhan88083@gmail.com/end_to_end_data_engineering/Logs/etl_pipeline_20260225_062847.log
+2026-02-25 06:28:57 - pyspark.pandas.usage_logger - WARNING - Tried to attach usage logger `pyspark.databricks.pandas.usage_logger`, but an exception was raised: JVM wasn't initialised. Did you call it on executor side?

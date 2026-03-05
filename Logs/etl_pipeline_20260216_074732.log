@@ -1,0 +1,24 @@
+2026-02-16 07:47:32 - root - INFO - ✓ Logging to file: /Workspace/Users/ajmalkhan88083@gmail.com/end_to_end_data_engineering/Logs/etl_pipeline_20260216_074732.log
+2026-02-16 07:47:32 - __main__ - INFO - Starting Problem 5: What percentage of orders are delivered vs cancelled?
+2026-02-16 07:47:32 - __main__ - INFO - Step 1: Extracting data...
+2026-02-16 07:47:32 - __main__ - INFO - Starting data extraction...
+2026-02-16 07:47:32 - __main__ - INFO -   Reading customer.csv...
+2026-02-16 07:47:34 - __main__ - INFO - Loaded 6000000 customer records
+2026-02-16 07:47:34 - __main__ - INFO -   Reading orders.csv...
+2026-02-16 07:47:35 - __main__ - INFO - Loaded 10000000 Order records
+2026-02-16 07:47:35 - __main__ - INFO -   Reading order_items.csv...
+2026-02-16 07:47:40 - __main__ - INFO - Loaded 30000000 order_items records
+2026-02-16 07:47:40 - __main__ - INFO -   Reading product.csv...
+2026-02-16 07:47:41 - __main__ - INFO - Loaded 150000 product records
+2026-02-16 07:48:09 - __main__ - INFO -  Extraction successful
+2026-02-16 07:48:09 - __main__ - INFO - Step 2: Transforming data...
+2026-02-16 07:48:09 - __main__ - ERROR -  Problem 5 FAILED
+2026-02-16 07:48:09 - __main__ - ERROR - Error: name 'rount' is not defined
+Traceback (most recent call last):
+  File "/home/spark-b10f0522-e784-42c0-a252-0b/.ipykernel/2639/command-7428020290726352-2091916713", line 25, in runner
+    orderDeliveredVsCancelledDF = orderDeliveredVsCancelled().transform(inputDFs)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/spark-b10f0522-e784-42c0-a252-0b/.ipykernel/2639/command-5195029872733773-948668266", line 273, in transform
+    rount((f.col('status_count') / f.sum('status_count').over(win)) * 100,2)
+    ^^^^^
+NameError: name 'rount' is not defined
