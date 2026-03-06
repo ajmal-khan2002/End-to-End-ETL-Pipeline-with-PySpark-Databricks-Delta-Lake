@@ -2,6 +2,10 @@ End-to-End ETL Pipeline with PySpark, Databricks & Delta Lake
 
 A production-grade, scalable data engineering pipeline processing 46M+ records across ingestion, transformation, and Delta Lake layers — with 99.8% data validity and 12 business-focused analytical use cases.<br>
 
+<H1>ETL Architecture</H1>
+
+<img width="465" height="181" alt="Screenshot 2026-03-06 151712" src="https://github.com/user-attachments/assets/dd7277ce-8417-495e-80b4-d7e0d3965f5d" />
+<img width="465" height="181" alt="Screenshot 2026-03-06 151712" src="https://github.com/user-attachments/assets/dd7277ce-8417-495e-80b4-d7e0d3965f5d" />
 
 📊 Business Use Cases<br>
 🔵 Level 1 — Core Analytics<br>
