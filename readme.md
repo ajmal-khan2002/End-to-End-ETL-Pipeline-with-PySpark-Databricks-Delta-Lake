@@ -53,7 +53,7 @@ Tables Used: order_items, products<br>
 ✅ 12 business-focused analytical use cases spanning 3 complexity levels<br>
 
 
-🚀 Getting Started<br>
+<h2>🚀 Getting Started</h2><br>
 Prerequisites<br>
 
 Python 3.8+<br>
@@ -61,9 +61,7 @@ Apache Spark 3.x<br>
 Databricks Runtime (recommended)<br>
 Delta Lake 2.x<br>
 
-🤝 Contributing<br>
+<h2>🤝 Contributing</h2><br>
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.<br>
-
-Built with using PySpark, Databricks & Delta Lake<br>
 
 Auther : Ajmal Khan<br>
