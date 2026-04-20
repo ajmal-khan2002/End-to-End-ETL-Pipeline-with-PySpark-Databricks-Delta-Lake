@@ -5,13 +5,12 @@ A modular, production-ready Data Engineering pipeline built on **Databricks** an
 ### 🛠 Tech Stack
 ![PySpark](https://img.shields.io/badge/PySpark-FF69B4?style=for-the-badge&logo=apache-spark&logoColor=white)
 ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ---
 
 # 🏗️ ETL Architecture
-![Data Pipeline Architecture](images/architecture.png)
+<img width="465" height="181" alt="Screenshot 2026-03-06 151712" src="https://github.com/user-attachments/assets/dd7277ce-8417-495e-80b4-d7e0d3965f5d" />
 
 *The pipeline follows the industry-standard **Medallion Architecture**, ensuring data quality and traceability from raw ingestion to analytical reporting.*
 
