@@ -1,34 +1,32 @@
-## End-to-End ETL Pipeline with PySpark
+# End-to-End ETL Pipeline with PySpark
 
-A modular, production-ready Data Engineering pipeline built on Databricks and PySpark. This framework is designed with a Strategy Design Pattern, allowing for decoupled, testable, and highly maintainable transformation logic across 46M+ records.
+A modular, production-ready Data Engineering pipeline built on **Databricks** and **PySpark**. This framework utilizes the **Strategy Design Pattern**, allowing for decoupled, testable, and highly maintainable transformation logic across 46M+ records.
 
----
-
-# ETL Architecture
-
-<img width="465" height="181" alt="Screenshot 2026-03-06 151712" src="https://github.com/user-attachments/assets/dd7277ce-8417-495e-80b4-d7e0d3965f5d" />
-
----
-
-## 🏗️ Core Architecture
-
-The pipeline is structured into three distinct layers to ensure separation of concerns:
-
-- **Extraction Layer:** Modular Extractor classes to ingest raw data with strict schema enforcement.  
-- **Transformation Layer:** A robust library of Transformer classes following the Strategy Pattern, enabling independent logic development.  
-- **Loading & Orchestration:** A centralized WorkflowRunner that manages the execution flow, logging, and data sink operations.  
+### 🛠 Tech Stack
+![PySpark](https://img.shields.io/badge/PySpark-FF69B4?style=for-the-badge&logo=apache-spark&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ---
 
-## ⚙️ Engineering Features
+# 🏗️ ETL Architecture
+![Data Pipeline Architecture](images/architecture.png)
 
-- **Strategy Pattern Implementation:** Transformations are encapsulated as individual classes. Adding new business logic requires only creating a new class, preventing "Spaghetti Code."  
+*The pipeline follows the industry-standard **Medallion Architecture**, ensuring data quality and traceability from raw ingestion to analytical reporting.*
 
-- **Schema Enforcement:** Rigid data contracts using PySpark StructType ensure data quality at the point of ingestion, preventing downstream type-mismatch failures.  
+---
 
-- **Production-Grade Logging:** Custom logging_config integration provides detailed execution logs (INFO, ERROR) to local directories for efficient production troubleshooting.  
+## 🚀 Engineering Features
+* **Strategy Pattern:** Decoupled business logic for high maintainability.
+* **Schema Enforcement:** Strict `StructType` contracts to prevent downstream failures.
+* **Production-Grade Logging:** Custom `logging_config` for observability and troubleshooting.
+* **Modular ETL:** Clean separation of concerns (Extraction, Transformation, Loading).
 
-- **Modular ETL:** Clean separation of Extraction, Transformation, and Loading, making the codebase highly unit-testable.  
+## 🧩 Engineering Challenges
+* **Scalable Joins:** Implemented `broadcast()` joins to eliminate network shuffles.
+* **Code Modularity:** Used Strategy Pattern to avoid "spaghetti code."
+* **Data Integrity:** Proactive filtering of 'Unknown' categories and null values at the ingestion layer.
 
 ---
 
