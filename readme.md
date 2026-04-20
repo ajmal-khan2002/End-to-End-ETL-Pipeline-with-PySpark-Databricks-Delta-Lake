@@ -3,27 +3,27 @@ A modular, production-ready Data Engineering pipeline built on Databricks and Py
 
 <H1>ETL Architecture</H1>
 
-<img width="465" height="181" alt="Screenshot 2026-03-06 151712" src="https://github.com/user-attachments/assets/dd7277ce-8417-495e-80b4-d7e0d3965f5d" />
+<img width="465" height="181" alt="Screenshot 2026-03-06 151712" src="https://github.com/user-attachments/assets/dd7277ce-8417-495e-80b4-d7e0d3965f5d" /> <br>
 
-🏗️ Core Architecture
-The pipeline is structured into three distinct layers to ensure separation of concerns:
+🏗️ Core Architecture <br>
+The pipeline is structured into three distinct layers to ensure separation of concerns:<br>
 
-Extraction Layer: Modular Extractor classes to ingest raw data with strict schema enforcement.
+Extraction Layer: Modular Extractor classes to ingest raw data with strict schema enforcement.<br>
 
-Transformation Layer: A robust library of Transformer classes following the Strategy Pattern, enabling independent logic development.
+Transformation Layer: A robust library of Transformer classes following the Strategy Pattern, enabling independent logic development.<br>
 
-Loading & Orchestration: A centralized WorkflowRunner that manages the execution flow, logging, and data sink operations.
+Loading & Orchestration: A centralized WorkflowRunner that manages the execution flow, logging, and data sink operations.<br>
 
-⚙️ Engineering Features
-Strategy Pattern Implementation: Transformations are encapsulated as individual classes. Adding new business logic requires only creating a new class, preventing "Spaghetti Code."
+⚙️ Engineering Features<br>
+Strategy Pattern Implementation: Transformations are encapsulated as individual classes. Adding new business logic requires only creating a new class, preventing "Spaghetti Code."<br>
 
-Schema Enforcement: Rigid data contracts using PySpark StructType ensure data quality at the point of ingestion, preventing downstream type-mismatch failures.
+Schema Enforcement: Rigid data contracts using PySpark StructType ensure data quality at the point of ingestion, preventing downstream type-mismatch failures.<br>
 
-Production-Grade Logging: Custom logging_config integration provides detailed execution logs (INFO, ERROR) to local directories for efficient production troubleshooting.
+Production-Grade Logging: Custom logging_config integration provides detailed execution logs (INFO, ERROR) to local directories for efficient production troubleshooting.<br>
 
-Modular ETL: Clean separation of Extraction, Transformation, and Loading, making the codebase highly unit-testable.
+Modular ETL: Clean separation of Extraction, Transformation, and Loading, making the codebase highly unit-testable.<br>
 
-📂 Project Structure
+📂 Project Structure<br>
 /
 ├── workflow/
 │   ├── logging_config.ipynb     # Centralized logging logic
@@ -31,9 +31,10 @@ Modular ETL: Clean separation of Extraction, Transformation, and Loading, making
 ├── transform.ipynb              # Strategy-based transformation classes
 ├── loader.ipynb                 # Sink and load operations
 └── analysis.ipynb               # Orchestration/Execution entry point
-🚀 How to Run
-Configure Environment: Ensure the Databricks environment has access to the defined file paths.
 
-Initialize Logging: Run the logging_config notebook.
+🚀 How to Run <br>
+Configure Environment: Ensure the Databricks environment has access to the defined file paths.<br>
 
-Execute Workflow: Use the WorkFlowRunner in analysis.ipynb to instantiate and run desired transformation classes.
+Initialize Logging: Run the logging_config notebook.<br>
+
+Execute Workflow: Use the WorkFlowRunner in analysis.ipynb to instantiate and run desired transformation classes.<br>
