@@ -33,13 +33,13 @@ The pipeline is structured into three distinct layers to ensure separation of co
 ---
 
 ## 📂 Project Structure
-/
-├── workflow/
-│ ├── logging_config.ipynb # Centralized logging logic
-│ └── extractor.ipynb # Data ingestion framework
-├── transform.ipynb # Strategy-based transformation classes
-├── loader.ipynb # Sink and load operations
-└── analysis.ipynb # Orchestration/Execution entry point
+/<br>
+├── workflow/<br>
+│ ├── logging_config.ipynb # Centralized logging logic<br>
+│ └── extractor.ipynb # Data ingestion framework<br>
+├── transform.ipynb # Strategy-based transformation classes<br>
+├── loader.ipynb # Sink and load operations<br>
+└── analysis.ipynb # Orchestration/Execution entry point<br>
 
 
 ---
